@@ -6,7 +6,7 @@ from fabric.contrib import files
 import os
 
 
-api.env.hosts = ['54.236.51.243', '54.144.249.112']
+api.env.hosts = ['54.236.51.243','54.144.249.112']
 api.env.user = 'ubuntu'
 api.env.key_filename = '~/.ssh/alx_server'
 
