@@ -6,17 +6,18 @@ from models.city import City
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
-class State(BaseModel):
-    """ State class """
-     __tablename__ = 'states'
+
+class State(BaseModel, Base):
+    """ State class / table model"""
+    __tablename__ = 'states'
     if storage_type == 'db':
         name = Column(String(128), nullable=False)
         cities = relationship('City', backref='state',
                               cascade='all, delete, delete-orphan')
     else:
-        name = ""
+        name = ''
 
-         @property
+        @property
         def cities(self):
             '''returns the list of City instances with state_id
                 equals the current State.id
